@@ -1,7 +1,5 @@
-Running on host node31-033
-Time is Thu Oct 11 12:38:22 BST 2018
+Running on host node31-030
+Time is Thu Oct 11 16:48:07 BST 2018
 Directory is /panfs/panasas01/cosc/mr16338/intro-hpc-stencil
-PBS job ID is 7510075.master.cm.cluster
-------------------------------------
- runtime: 6.799283 s
-------------------------------------
+PBS job ID is 7512129.master.cm.cluster
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7512129.master.cm.cluster.SC: line 17: 126934 Bus error               ./stencil 4096 4096 100

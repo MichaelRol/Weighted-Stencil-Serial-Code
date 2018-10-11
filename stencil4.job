@@ -1,6 +1,6 @@
 #!/bin/bash
-#PBS -N stencil1
-#PBS -o stencil.out
+#PBS -N stencil4
+#PBS -o stencil4.out
 #PBS -joe
 #PBS -m a
 #PBS -qteaching
@@ -14,5 +14,5 @@ echo Time is `date`
 echo Directory is `pwd`
 echo PBS job ID is $PBS_JOBID
 
-./stencil 1024 1024 100
+./stencil 4096 4096 100
 
