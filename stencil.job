@@ -15,4 +15,12 @@ echo Directory is `pwd`
 echo PBS job ID is $PBS_JOBID
 
 ./stencil 1024 1024 100
-
+./stencil 1024 1024 100
+./stencil 1024 1024 100
+./stencil 1024 1024 100
+./stencil 1024 1024 100
+./stencil 1024 1024 100
+./stencil 1024 1024 100
+./stencil 1024 1024 100
+./stencil 1024 1024 100
+./stencil 1024 1024 100

@@ -1,7 +1,14 @@
-Running on host node31-032
-Time is Thu Oct 11 16:57:49 BST 2018
+Running on host node31-033
+Time is Mon Oct 15 15:44:36 BST 2018
 Directory is /panfs/panasas01/cosc/mr16338/intro-hpc-stencil
-PBS job ID is 7512175.master.cm.cluster
-------------------------------------
- runtime: 111.096869 s
-------------------------------------
+PBS job ID is 7530528.master.cm.cluster
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 17: 63459 Bus error               ./stencil 4096 4096 100
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 18: ./stencil: No such file or directory
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 19: ./stencil: Permission denied
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 20: ./stencil: Permission denied
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 21: ./stencil: Permission denied
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 22: ./stencil: Permission denied
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 23: ./stencil: Permission denied
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 24: ./stencil: Permission denied
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 25: ./stencil: Permission denied
+/cm/local/apps/torque/4.2.4.1/spool/mom_priv/jobs/7530528.master.cm.cluster.SC: line 26: ./stencil: Permission denied
