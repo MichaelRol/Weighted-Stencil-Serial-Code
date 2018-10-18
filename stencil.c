@@ -50,13 +50,31 @@ int main(int argc, char *argv[]) {
 }
 
 void stencil(const int nx, const int ny, double *  image, double * tmp_image) {
-  for (int j = 0; j < ny; ++j) {
-    for (int i = 0; i < nx; ++i) {
+  tmp_image[0] = image[0] * 0.6 + image[ny] * 0.1 + image[1] * 0.1;
+  tmp_image[ny-1] = image[ny-1] * 0.6 + image[ny-2] * 0.1 + image[2*  ny-1] * 0.1;
+  tmp_image[(ny-1) * ny] = image[(ny-1) * ny] * 0.6 + image[(ny-2) * ny] * 0.1 + image[1 + (ny-1) * ny] * 0.1;
+  tmp_image[(ny - 1) + (ny - 1) * ny] = image[(ny - 1) + (ny - 1) * ny] * 0.6 + image[(ny - 2) + (ny - 1) * ny] * 0.1 + image[(ny - 1) + (ny - 2) * ny] * 0.1;
+
+  for(int i = 1; i < ny - 1; ++i){
+    tmp_image[i] = image[i] * 0.6 + image[i - 1] * 0.1 + image[i + 1] * 0.1 + image[ny + i] * 0.1;
+  }
+  for(int i = 1; i < ny - 1; ++i){
+    tmp_image[(ny - 1) * ny + i] = image[(ny - 1) * ny + i] * 0.6 + image[(ny - 1) * ny + (i - 1)] * 0.1 + image[(ny - 1) * ny + (i + 1)] * 0.1 + image[(ny - 2) * ny + i] * 0.1;
+  } 
+  for(int j = 1; j < ny - 1; ++j){
+    tmp_image[ny * j] = image[ny * j] * 0.6 + image[ny * (j - 1)] * 0.1 + image[ny * (j + 1)] * 0.1 + image[ny * j + 1] * 0.1;
+  }
+  for(int j = 1; j < ny - 1; ++j){
+    tmp_image[ny * j + ny - 1] = image[ny * j + ny - 1] * 0.6 + image[ny * (j - 1) + ny - 1] * 0.1 + image[ny * (j + 1) + ny - 1] * 0.1 + image[ny * j + ny - 2] * 0.1;
+  }
+
+  for (int j = 1; j < ny - 1; ++j) {
+    for (int i = 1; i < nx - 1; ++i) {
       tmp_image[j+i*ny] = image[j+i*ny] * 0.6;
-      if (i != 0)    tmp_image[j+i*ny] += image[j  +(i-1)*ny] * 0.1;
-      if (i < nx-1) tmp_image[j+i*ny] += image[j  +(i+1)*ny] * 0.1;
-      if (j != 0)    tmp_image[j+i*ny] += image[j-1+i*ny] * 0.1;
-      if (j < ny-1) tmp_image[j+i*ny] += image[j+1+i*ny] * 0.1;
+      tmp_image[j+i*ny] += image[j  +(i-1)*ny] * 0.1;
+      tmp_image[j+i*ny] += image[j  +(i+1)*ny] * 0.1;
+      tmp_image[j+i*ny] += image[j-1+i*ny] * 0.1;
+      tmp_image[j+i*ny] += image[j+1+i*ny] * 0.1;
     }
   }
 }
