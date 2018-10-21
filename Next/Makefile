@@ -1,2 +1,2 @@
 stencil: stencil.c
-	icc -std=c99 -Wall $^ -o $@ -O3
+	icc -std=c99 -Wall $^ -o $@ -fast
