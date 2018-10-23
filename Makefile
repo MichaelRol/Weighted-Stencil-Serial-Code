@@ -1,2 +1,2 @@
 stencil: stencil.c
-	gcc -std=c99 -Wall $^ -o $@ -Ofast 
+	icc -std=c99 -Wall $^ -o $@ -fast #-fopt-info-vec-optimized 
