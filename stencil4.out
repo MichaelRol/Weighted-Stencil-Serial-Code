@@ -1,14 +1,14 @@
 Running on host node31-034
-Time is Tue Oct 23 14:45:46 BST 2018
+Time is Thu Oct 25 19:10:58 BST 2018
 Directory is /panfs/panasas01/cosc/mr16338/intro-hpc-stencil
-PBS job ID is 7587810.master.cm.cluster
-4.653923 
-4.662121 
-4.660479 
-4.658716 
-4.665524 
-4.651126 
-4.668640 
-4.653470 
-4.662221 
-4.655278 
+PBS job ID is 7617726.master.cm.cluster
+2.470115 
+2.457507 
+2.461795 
+2.477328 
+2.460639 
+2.462950 
+2.469754 
+2.456595 
+2.457677 
+2.476795 
