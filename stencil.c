@@ -49,27 +49,44 @@ int main(int argc, char *argv[]) {
 }
 
 void stencil(const int nx, const int ny, float * restrict  image, float * restrict tmp_image) {
+
+  //top left cell
   tmp_image[0] = image[0] * 0.6f + (image[ny] + image[1]) * 0.1f;
+
+  //top row
   for(int i = 1; i < ny - 1; ++i){
     tmp_image[i] = image[i] * 0.6f + (image[i - 1] + image[i + 1] + image[ny + i]) * 0.1f;
   }
+
+  //top right cell
   tmp_image[ny-1] = image[ny-1] * 0.6f + (image[ny-2] + image[2*  ny-1]) * 0.1f;
+
+  //left side column
   for(int j = 1; j < ny - 1; ++j){
     tmp_image[ny * j] = image[ny * j] * 0.6f + (image[ny * (j - 1)] + image[ny * (j + 1)] + image[ny * j + 1]) * 0.1f;
   }
+
+  //right side column
   for(int j = 1; j < ny - 1; ++j){
     tmp_image[ny * j + ny - 1] = image[ny * j + ny - 1] * 0.6f + (image[ny * (j - 1) + ny - 1] + image[ny * (j + 1) + ny - 1] + image[ny * j + ny - 2]) * 0.1f;
   }
 
+  //inner grid
   for (int i = 1; i < ny - 1; ++i) {
     for (int j = 1; j < nx - 1; ++j) {
       tmp_image[j+i*ny] = image[j+i*ny] * 0.6f + (image[j  +(i-1)*ny] + image[j  +(i+1)*ny] + image[j-1+i*ny] + image[j+1+i*ny]) * 0.1f;
     }
   }
+
+  //bottom left cell
   tmp_image[(ny-1) * ny] = image[(ny-1) * ny] * 0.6f + (image[(ny-2) * ny] + image[1 + (ny-1) * ny]) * 0.1f;
+
+  //bottom row
   for(int i = 1; i < ny - 1; ++i){
     tmp_image[(ny - 1) * ny + i] = image[(ny - 1) * ny + i] * 0.6f + (image[(ny - 1) * ny + (i - 1)] + image[(ny - 1) * ny + (i + 1)] + image[(ny - 2) * ny + i]) * 0.1f;
-  } 
+  }
+
+  //bottom right cell
   tmp_image[(ny - 1) + (ny - 1) * ny] = image[(ny - 1) + (ny - 1) * ny] * 0.6f + (image[(ny - 2) + (ny - 1) * ny] + image[(ny - 1) + (ny - 2) * ny]) * 0.1f;
 
 }
